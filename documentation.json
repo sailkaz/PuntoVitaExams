@@ -1,0 +1,415 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PuntoVitaExams.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/address": {
+      "post": {
+        "tags": [
+          "Address"
+        ],
+        "parameters": [
+          {
+            "name": "street",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "streetNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flatNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "postalCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Address"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Address"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Address"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/sailingExams": {
+      "get": {
+        "tags": [
+          "SailingExam"
+        ],
+        "parameters": [
+          {
+            "name": "sailingExamNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SailingExam"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SailingExam"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SailingExam"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/students": {
+      "get": {
+        "tags": [
+          "Students"
+        ],
+        "parameters": [
+          {
+            "name": "lastName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Student"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Address": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "streetNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "flatNumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "students": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Student"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExaminationCommittee": {
+        "type": "object",
+        "properties": {
+          "examinationCommitteeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examinationCommitteeHead": {
+            "$ref": "#/components/schemas/ExaminationCommitteeHead"
+          },
+          "examinationCommitteeSecretary": {
+            "$ref": "#/components/schemas/ExaminationCommitteeSecretary"
+          },
+          "sailingExams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SailingExam"
+            },
+            "nullable": true
+          },
+          "examinationCommitteeMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ExaminationCommitteeMember"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExaminationCommitteeHead": {
+        "type": "object",
+        "properties": {
+          "examinationCommitteeHeadId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examinationCommitteeHeadFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommitteeHeadLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommittee": {
+            "$ref": "#/components/schemas/ExaminationCommittee"
+          },
+          "examinationCommitteeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExaminationCommitteeMember": {
+        "type": "object",
+        "properties": {
+          "examinationCommitteeMemberId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examinationCommitteeMemberFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommitteeMemberLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommittee": {
+            "$ref": "#/components/schemas/ExaminationCommittee"
+          },
+          "examinationCommitteeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExaminationCommitteeSecretary": {
+        "type": "object",
+        "properties": {
+          "examinationCommitteeSecretaryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "examinationCommitteeSecretaryFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommitteeSecretaryLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "examinationCommittee": {
+            "$ref": "#/components/schemas/ExaminationCommittee"
+          },
+          "examinationCommitteeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SailingExam": {
+        "type": "object",
+        "properties": {
+          "sailingExamId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sailingExamNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "sailingExamDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sailingExamPlace": {
+            "type": "string",
+            "nullable": true
+          },
+          "students": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Student"
+            },
+            "nullable": true
+          },
+          "examinationCommittee": {
+            "$ref": "#/components/schemas/ExaminationCommittee"
+          },
+          "examinationCommitteeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Student": {
+        "type": "object",
+        "properties": {
+          "studentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "pesel": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "sailingExams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SailingExam"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,881 @@
+2023-09-04 00:25:04.723 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:25:04.741 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:04.742 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 19.5118ms
+2023-09-04 00:25:04.744 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:25:04.745 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:04.745 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:25:04.747 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:25:05.570 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:25:05.576 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:25:05.577 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:25:05.578 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 829.2195ms
+2023-09-04 00:25:05.580 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:25:05.581 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 878 application/json;+charset=utf-8 838.0393ms
+2023-09-04 00:25:05.599 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:25:05.601 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:05.602 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:25:05.602 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 2.7585ms
+2023-09-04 00:25:05.609 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:05.630 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:25:05.639 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 37.4343ms
+2023-09-04 00:25:05.640 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:05.643 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:25:05.644 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:25:05.646 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:25:05.647 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:05.651 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:25:05.652 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:25:05.653 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 2.8823ms
+2023-09-04 00:25:05.655 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:25:05.656 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:25:05.658 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:25:05.659 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 29.0962ms
+2023-09-04 00:25:05.660 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.8904ms
+2023-09-04 00:25:05.662 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:25:05.663 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 19.4053ms
+2023-09-04 00:25:08.162 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:25:08.166 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:08.166 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:25:08.167 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:25:08.168 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:25:08.169 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 0.9257ms
+2023-09-04 00:25:08.169 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:25:08.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 8.4270ms
+2023-09-04 00:25:15.252 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee/13 - -
+2023-09-04 00:25:15.254 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:15.256 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee/13 - - - 204 - - 3.7704ms
+2023-09-04 00:25:15.257 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommittee/13 - -
+2023-09-04 00:25:15.258 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:15.258 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API)'
+2023-09-04 00:25:15.259 +02:00 [INF] Route matched with {action = "GetExaminationCommittee", controller = "ExaminationCommittees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PuntoVitaExams.API.Models.ExaminationCommitteeDto]] GetExaminationCommittee(Int32) on controller PuntoVitaExams.API.Controllers.ExaminationCommitteesController (PuntoVitaExams.API).
+2023-09-04 00:25:15.276 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__examinationCommiteeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ExaminationCommitteeId], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryId0], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t0].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t0].[ExaminationCommitteesExaminationCommitteeId], [t0].[ExaminationCommitteeMemberId], [t0].[ExaminationCommitteeMemberFirstName], [t0].[ExaminationCommitteeMemberLastName], [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace]
+FROM (
+    SELECT TOP(1) [e].[ExaminationCommitteeId], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [ExaminationCommittees] AS [e]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [e].[ExaminationCommitteeId] = @__examinationCommiteeId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t0] ON [t].[ExaminationCommitteeId] = [t0].[ExaminationCommitteesExaminationCommitteeId]
+LEFT JOIN [SailingExams] AS [s] ON [t].[ExaminationCommitteeId] = [s].[ExaminationCommitteeId]
+ORDER BY [t].[ExaminationCommitteeId], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t0].[ExaminationCommitteesExaminationCommitteeId], [t0].[ExaminationCommitteeMemberId]
+2023-09-04 00:25:15.279 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.ExaminationCommitteeDto'.
+2023-09-04 00:25:15.280 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API) in 19.6591ms
+2023-09-04 00:25:15.281 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API)'
+2023-09-04 00:25:15.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommittee/13 - - - 200 661 application/json;+charset=utf-8 24.3630ms
+2023-09-04 00:25:27.141 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee - -
+2023-09-04 00:25:27.145 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:27.145 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee - - - 204 - - 4.3134ms
+2023-09-04 00:25:27.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommittee - -
+2023-09-04 00:25:27.147 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:27.148 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API)'
+2023-09-04 00:25:27.148 +02:00 [INF] Route matched with {action = "GetExaminationCommittees", controller = "ExaminationCommittees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.ExaminationCommitteeDto]]] GetExaminationCommittees() on controller PuntoVitaExams.API.Controllers.ExaminationCommitteesController (PuntoVitaExams.API).
+2023-09-04 00:25:27.156 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExaminationCommitteeId], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName], [t].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t].[ExaminationCommitteesExaminationCommitteeId], [t].[ExaminationCommitteeMemberId], [t].[ExaminationCommitteeMemberFirstName], [t].[ExaminationCommitteeMemberLastName], [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace]
+FROM [ExaminationCommittees] AS [e]
+LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t] ON [e].[ExaminationCommitteeId] = [t].[ExaminationCommitteesExaminationCommitteeId]
+LEFT JOIN [SailingExams] AS [s] ON [e].[ExaminationCommitteeId] = [s].[ExaminationCommitteeId]
+ORDER BY [e].[ExaminationCommitteeId], [e0].[ExaminationCommitteeHeadId], [e1].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t].[ExaminationCommitteesExaminationCommitteeId], [t].[ExaminationCommitteeMemberId]
+2023-09-04 00:25:27.159 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.ExaminationCommitteeDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:25:27.161 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API) in 11.4742ms
+2023-09-04 00:25:27.162 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API)'
+2023-09-04 00:25:27.163 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommittee - - - 200 3658 application/json;+charset=utf-8 16.1499ms
+2023-09-04 00:25:41.655 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeHead/committeeHeadWithExams?lastName=Grabska - -
+2023-09-04 00:25:41.659 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:41.660 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeHead/committeeHeadWithExams?lastName=Grabska - - - 204 - - 4.8335ms
+2023-09-04 00:25:41.662 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeHead/committeeHeadWithExams?lastName=Grabska - -
+2023-09-04 00:25:41.663 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:25:41.664 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetCommitteeHeadWithExams (PuntoVitaExams.API)'
+2023-09-04 00:25:41.664 +02:00 [INF] Route matched with {action = "GetCommitteeHeadWithExams", controller = "ExaminationCommitteeHeads"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.HeadByExamsDto]]] GetCommitteeHeadWithExams(System.String) on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController (PuntoVitaExams.API).
+2023-09-04 00:25:41.668 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeHeadFirstName], [e].[ExaminationCommitteeHeadLastName]
+FROM [ExaminationCommitteeHeads] AS [e]
+WHERE [e].[ExaminationCommitteeHeadLastName] = @__lastName_0
+2023-09-04 00:25:41.681 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[ExaminationCommitteeHeadFirstName], [h].[ExaminationCommitteeHeadLastName], [h].[SailingExamDate], [h].[SailingExamNumber], [h].[SailingExamPlace]
+FROM [HeadByExams] AS [h]
+WHERE [h].[ExaminationCommitteeHeadLastName] = @__lastName_0
+2023-09-04 00:25:41.683 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.HeadByExamsDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:25:41.684 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetCommitteeHeadWithExams (PuntoVitaExams.API) in 18.0613ms
+2023-09-04 00:25:41.685 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetCommitteeHeadWithExams (PuntoVitaExams.API)'
+2023-09-04 00:25:41.686 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeHead/committeeHeadWithExams?lastName=Grabska - - - 200 1013 application/json;+charset=utf-8 23.5048ms
+2023-09-04 00:26:02.144 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeSecretary/committeeSecretaryWithExams?lastName=wyczesany - -
+2023-09-04 00:26:02.146 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:02.147 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeSecretary/committeeSecretaryWithExams?lastName=wyczesany - - - 204 - - 2.9854ms
+2023-09-04 00:26:02.151 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeSecretary/committeeSecretaryWithExams?lastName=wyczesany - -
+2023-09-04 00:26:02.152 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:02.153 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetCommitteeSecretaryWithExams (PuntoVitaExams.API)'
+2023-09-04 00:26:02.156 +02:00 [INF] Route matched with {action = "GetCommitteeSecretaryWithExams", controller = "ExaminationCommitteeSecretaries"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.SecretaryByExamsDto]]] GetCommitteeSecretaryWithExams(System.String) on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController (PuntoVitaExams.API).
+2023-09-04 00:26:02.164 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExaminationCommitteeSecretaryId], [e].[ExaminationCommitteeSecretaryFirstName], [e].[ExaminationCommitteeSecretaryLastName]
+FROM [ExaminationCommitteeSecretaries] AS [e]
+WHERE [e].[ExaminationCommitteeSecretaryLastName] = @__lastName_0
+2023-09-04 00:26:02.181 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ExaminationCommitteeSecretaryFirstName], [s].[ExaminationCommitteeSecretaryLastName], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace]
+FROM [SecretaryByExams] AS [s]
+WHERE [s].[ExaminationCommitteeSecretaryLastName] = @__lastName_0
+2023-09-04 00:26:02.187 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.SecretaryByExamsDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:02.190 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetCommitteeSecretaryWithExams (PuntoVitaExams.API) in 31.7477ms
+2023-09-04 00:26:02.191 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetCommitteeSecretaryWithExams (PuntoVitaExams.API)'
+2023-09-04 00:26:02.192 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeSecretary/committeeSecretaryWithExams?lastName=wyczesany - - - 200 911 application/json;+charset=utf-8 40.9984ms
+2023-09-04 00:26:17.448 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeMember/committeeMemberWithExams?lastName=koniec - -
+2023-09-04 00:26:17.452 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:17.453 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeMember/committeeMemberWithExams?lastName=koniec - - - 204 - - 4.7813ms
+2023-09-04 00:26:17.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeMember/committeeMemberWithExams?lastName=koniec - -
+2023-09-04 00:26:17.459 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:17.460 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetCommitteeMemberWithExams (PuntoVitaExams.API)'
+2023-09-04 00:26:17.463 +02:00 [INF] Route matched with {action = "GetCommitteeMemberWithExams", controller = "ExaminationCommitteeMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.MemberByExamsDto]]] GetCommitteeMemberWithExams(System.String) on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController (PuntoVitaExams.API).
+2023-09-04 00:26:17.471 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[ExaminationCommitteeMemberId], [e].[ExaminationCommitteeMemberFirstName], [e].[ExaminationCommitteeMemberLastName]
+FROM [ExaminationCommitteeMembers] AS [e]
+WHERE [e].[ExaminationCommitteeMemberLastName] = @__lastName_0
+2023-09-04 00:26:17.489 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__lastName_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ExaminationCommitteeMemberFirstName], [m].[ExaminationCommitteeMemberLastName], [m].[SailingExamDate], [m].[SailingExamNumber], [m].[SailingExamPlace]
+FROM [MemberByExams] AS [m]
+WHERE [m].[ExaminationCommitteeMemberLastName] = @__lastName_0
+2023-09-04 00:26:17.493 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.MemberByExamsDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:17.497 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetCommitteeMemberWithExams (PuntoVitaExams.API) in 32.0971ms
+2023-09-04 00:26:17.498 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetCommitteeMemberWithExams (PuntoVitaExams.API)'
+2023-09-04 00:26:17.499 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeMember/committeeMemberWithExams?lastName=koniec - - - 200 203 application/json;+charset=utf-8 41.9904ms
+2023-09-04 00:26:25.118 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeMember/ - -
+2023-09-04 00:26:25.120 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:25.120 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeMember/ - - - 204 - - 2.5764ms
+2023-09-04 00:26:25.121 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeMember/ - -
+2023-09-04 00:26:25.122 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:25.123 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetExaminationCommitteeMembers (PuntoVitaExams.API)'
+2023-09-04 00:26:25.125 +02:00 [INF] Route matched with {action = "GetExaminationCommitteeMembers", controller = "ExaminationCommitteeMembers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.ExaminationCommitteeMemberDto]]] GetExaminationCommitteeMembers() on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController (PuntoVitaExams.API).
+2023-09-04 00:26:25.132 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExaminationCommitteeMemberId], [e].[ExaminationCommitteeMemberFirstName], [e].[ExaminationCommitteeMemberLastName]
+FROM [ExaminationCommitteeMembers] AS [e]
+ORDER BY [e].[ExaminationCommitteeMemberLastName]
+2023-09-04 00:26:25.135 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.ExaminationCommitteeMemberDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:25.136 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetExaminationCommitteeMembers (PuntoVitaExams.API) in 9.5018ms
+2023-09-04 00:26:25.137 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetExaminationCommitteeMembers (PuntoVitaExams.API)'
+2023-09-04 00:26:25.138 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeMember/ - - - 200 295 application/json;+charset=utf-8 16.9500ms
+2023-09-04 00:26:31.951 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeSecretary/ - -
+2023-09-04 00:26:31.953 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:31.954 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeSecretary/ - - - 204 - - 3.0407ms
+2023-09-04 00:26:31.955 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeSecretary/ - -
+2023-09-04 00:26:31.956 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:31.957 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetExaminationCommitteeSecretaries (PuntoVitaExams.API)'
+2023-09-04 00:26:31.960 +02:00 [INF] Route matched with {action = "GetExaminationCommitteeSecretaries", controller = "ExaminationCommitteeSecretaries"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.ExaminationCommitteeSecretaryDto]]] GetExaminationCommitteeSecretaries() on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController (PuntoVitaExams.API).
+2023-09-04 00:26:31.967 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExaminationCommitteeSecretaryId], [e].[ExaminationCommitteeSecretaryFirstName], [e].[ExaminationCommitteeSecretaryLastName]
+FROM [ExaminationCommitteeSecretaries] AS [e]
+ORDER BY [e].[ExaminationCommitteeSecretaryLastName]
+2023-09-04 00:26:31.972 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.ExaminationCommitteeSecretaryDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:31.973 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetExaminationCommitteeSecretaries (PuntoVitaExams.API) in 12.4681ms
+2023-09-04 00:26:31.975 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetExaminationCommitteeSecretaries (PuntoVitaExams.API)'
+2023-09-04 00:26:31.975 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeSecretary/ - - - 200 418 application/json;+charset=utf-8 19.9020ms
+2023-09-04 00:26:40.701 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeHead/ - -
+2023-09-04 00:26:40.703 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:40.704 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommitteeHead/ - - - 204 - - 2.9047ms
+2023-09-04 00:26:40.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommitteeHead/ - -
+2023-09-04 00:26:40.708 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:40.709 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetExaminationCommitteeHeads (PuntoVitaExams.API)'
+2023-09-04 00:26:40.710 +02:00 [INF] Route matched with {action = "GetExaminationCommitteeHeads", controller = "ExaminationCommitteeHeads"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.ExaminationCommitteeHeadDto]]] GetExaminationCommitteeHeads() on controller PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController (PuntoVitaExams.API).
+2023-09-04 00:26:40.712 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeHeadFirstName], [e].[ExaminationCommitteeHeadLastName]
+FROM [ExaminationCommitteeHeads] AS [e]
+ORDER BY [e].[ExaminationCommitteeHeadLastName]
+2023-09-04 00:26:40.714 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.ExaminationCommitteeHeadDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:40.715 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetExaminationCommitteeHeads (PuntoVitaExams.API) in 4.0965ms
+2023-09-04 00:26:40.716 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetExaminationCommitteeHeads (PuntoVitaExams.API)'
+2023-09-04 00:26:40.717 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommitteeHead/ - - - 200 285 application/json;+charset=utf-8 9.2979ms
+2023-09-04 00:26:54.091 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee - -
+2023-09-04 00:26:54.094 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:54.094 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee - - - 204 - - 3.3538ms
+2023-09-04 00:26:54.096 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommittee - -
+2023-09-04 00:26:54.097 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:26:54.097 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API)'
+2023-09-04 00:26:54.098 +02:00 [INF] Route matched with {action = "GetExaminationCommittees", controller = "ExaminationCommittees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PuntoVitaExams.API.Models.ExaminationCommitteeDto]]] GetExaminationCommittees() on controller PuntoVitaExams.API.Controllers.ExaminationCommitteesController (PuntoVitaExams.API).
+2023-09-04 00:26:54.101 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ExaminationCommitteeId], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName], [t].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t].[ExaminationCommitteesExaminationCommitteeId], [t].[ExaminationCommitteeMemberId], [t].[ExaminationCommitteeMemberFirstName], [t].[ExaminationCommitteeMemberLastName], [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace]
+FROM [ExaminationCommittees] AS [e]
+LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t] ON [e].[ExaminationCommitteeId] = [t].[ExaminationCommitteesExaminationCommitteeId]
+LEFT JOIN [SailingExams] AS [s] ON [e].[ExaminationCommitteeId] = [s].[ExaminationCommitteeId]
+ORDER BY [e].[ExaminationCommitteeId], [e0].[ExaminationCommitteeHeadId], [e1].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t].[ExaminationCommitteesExaminationCommitteeId], [t].[ExaminationCommitteeMemberId]
+2023-09-04 00:26:54.104 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.ExaminationCommitteeDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:26:54.105 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API) in 5.8903ms
+2023-09-04 00:26:54.106 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees (PuntoVitaExams.API)'
+2023-09-04 00:26:54.107 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommittee - - - 200 3658 application/json;+charset=utf-8 11.4571ms
+2023-09-04 00:27:05.032 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee/10 - -
+2023-09-04 00:27:05.034 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:05.036 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/examinationCommittee/10 - - - 204 - - 4.1124ms
+2023-09-04 00:27:05.037 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/examinationCommittee/10 - -
+2023-09-04 00:27:05.038 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:05.039 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API)'
+2023-09-04 00:27:05.040 +02:00 [INF] Route matched with {action = "GetExaminationCommittee", controller = "ExaminationCommittees"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PuntoVitaExams.API.Models.ExaminationCommitteeDto]] GetExaminationCommittee(Int32) on controller PuntoVitaExams.API.Controllers.ExaminationCommitteesController (PuntoVitaExams.API).
+2023-09-04 00:27:05.043 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__examinationCommiteeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ExaminationCommitteeId], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryId0], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t0].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t0].[ExaminationCommitteesExaminationCommitteeId], [t0].[ExaminationCommitteeMemberId], [t0].[ExaminationCommitteeMemberFirstName], [t0].[ExaminationCommitteeMemberLastName], [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace]
+FROM (
+    SELECT TOP(1) [e].[ExaminationCommitteeId], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [ExaminationCommittees] AS [e]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [e].[ExaminationCommitteeId] = @__examinationCommiteeId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t0] ON [t].[ExaminationCommitteeId] = [t0].[ExaminationCommitteesExaminationCommitteeId]
+LEFT JOIN [SailingExams] AS [s] ON [t].[ExaminationCommitteeId] = [s].[ExaminationCommitteeId]
+ORDER BY [t].[ExaminationCommitteeId], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t0].[ExaminationCommitteesExaminationCommitteeId], [t0].[ExaminationCommitteeMemberId]
+2023-09-04 00:27:05.047 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.ExaminationCommitteeDto'.
+2023-09-04 00:27:05.048 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API) in 7.1166ms
+2023-09-04 00:27:05.049 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee (PuntoVitaExams.API)'
+2023-09-04 00:27:05.050 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/examinationCommittee/10 - - - 200 879 application/json;+charset=utf-8 12.4428ms
+2023-09-04 00:27:15.121 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:27:15.122 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:27:15.132 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:15.134 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:15.135 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 13.7377ms
+2023-09-04 00:27:15.135 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 13.2888ms
+2023-09-04 00:27:15.137 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:27:15.147 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:27:15.148 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:15.149 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:15.150 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:27:15.150 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:27:15.151 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:27:15.151 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:27:15.153 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:27:15.154 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:27:15.155 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 1.9624ms
+2023-09-04 00:27:15.156 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.7254ms
+2023-09-04 00:27:15.156 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:27:15.157 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:27:15.158 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 21.0954ms
+2023-09-04 00:27:15.159 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 14.6275ms
+2023-09-04 00:27:17.681 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:27:17.684 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:17.685 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:27:17.686 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:27:17.687 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:27:17.688 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.4762ms
+2023-09-04 00:27:17.689 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:27:17.690 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 9.1464ms
+2023-09-04 00:27:32.846 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:27:32.848 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:32.848 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - - - 204 - - 1.8915ms
+2023-09-04 00:27:32.849 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:27:32.850 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:32.850 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:27:32.851 +02:00 [INF] Route matched with {action = "GetExamWithStudentsAndCommittee", controller = "SailingExams"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExamWithStudentsAndCommittee(System.String) on controller PuntoVitaExams.API.Controllers.SailingExamsController (PuntoVitaExams.API).
+2023-09-04 00:27:32.856 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SailingExams] AS [s]
+        WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:27:32.876 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[SailingExamId], [t].[ExaminationCommitteeId], [t].[SailingExamDate], [t].[SailingExamNumber], [t].[SailingExamPlace], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t0].[AddressId], [t0].[FirstName], [t0].[LastName], [t0].[Pesel], [t0].[Result], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId], [t1].[ExaminationCommitteeMemberId], [t1].[ExaminationCommitteeMemberFirstName], [t1].[ExaminationCommitteeMemberLastName]
+FROM (
+    SELECT TOP(1) [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace], [e].[ExaminationCommitteeId] AS [ExaminationCommitteeId0], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [SailingExams] AS [s]
+    LEFT JOIN [ExaminationCommittees] AS [e] ON [s].[ExaminationCommitteeId] = [e].[ExaminationCommitteeId]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[StudentId], [s1].[AddressId], [s1].[FirstName], [s1].[LastName], [s1].[Pesel], [s1].[Result]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [Students] AS [s1] ON [s0].[StudentsStudentId] = [s1].[StudentId]
+) AS [t0] ON [t].[SailingExamId] = [t0].[SailingExamsSailingExamId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t1] ON [t].[ExaminationCommitteeId0] = [t1].[ExaminationCommitteesExaminationCommitteeId]
+ORDER BY [t].[SailingExamId], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId]
+2023-09-04 00:27:32.882 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.SailingExamDto'.
+2023-09-04 00:27:32.883 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API) in 30.6222ms
+2023-09-04 00:27:32.884 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:27:32.885 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - - - 200 2266 application/json;+charset=utf-8 35.3884ms
+2023-09-04 00:27:38.734 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/ - -
+2023-09-04 00:27:38.735 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:38.736 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/ - - - 204 - - 2.2728ms
+2023-09-04 00:27:38.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/ - -
+2023-09-04 00:27:38.739 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:27:38.739 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:27:38.740 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:27:38.741 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/ - - - 405 0 - 3.2267ms
+2023-09-04 00:28:05.387 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/students/Pozytywny/PV-3-22 - -
+2023-09-04 00:28:05.392 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:28:05.393 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/students/Pozytywny/PV-3-22 - - - 204 - - 5.5975ms
+2023-09-04 00:28:05.394 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students/Pozytywny/PV-3-22 - -
+2023-09-04 00:28:05.395 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:28:05.395 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API)'
+2023-09-04 00:28:05.396 +02:00 [INF] Route matched with {action = "GetStudentsWhoPassedTheExam", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStudentsWhoPassedTheExam(System.String, System.String) on controller PuntoVitaExams.API.Controllers.StudentsController (PuntoVitaExams.API).
+2023-09-04 00:28:05.403 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__examResult_0='?' (Size = 4000), @__examNumber_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[FirstName], [s].[FlatNumber], [s].[LastName], [s].[Pesel], [s].[PostalCode], [s].[Result], [s].[SailingExamNumber], [s].[Street], [s].[StreetNumber]
+FROM [StudentsWhoPassedTheExam] AS [s]
+WHERE [s].[Result] = @__examResult_0 AND [s].[SailingExamNumber] = @__examNumber_1
+2023-09-04 00:28:05.405 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.StudentsWhoPassedTheExamDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:28:05.406 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API) in 9.0134ms
+2023-09-04 00:28:05.407 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API)'
+2023-09-04 00:28:05.408 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students/Pozytywny/PV-3-22 - - - 200 2320 application/json;+charset=utf-8 13.9886ms
+2023-09-04 00:28:14.497 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/students// - -
+2023-09-04 00:28:14.499 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:28:14.500 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/students// - - - 204 - - 3.0468ms
+2023-09-04 00:28:14.505 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students// - -
+2023-09-04 00:28:14.506 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:28:14.507 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students// - - - 404 0 - 1.7781ms
+2023-09-04 00:28:17.844 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students// - -
+2023-09-04 00:28:17.846 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:28:17.847 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students// - - - 404 0 - 2.6266ms
+2023-09-04 00:30:32.660 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:30:32.666 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.668 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 7.9739ms
+2023-09-04 00:30:32.669 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:30:32.669 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.670 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:30:32.671 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:30:32.676 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:30:32.679 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:30:32.680 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 7.5784ms
+2023-09-04 00:30:32.681 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:30:32.685 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 879 application/json;+charset=utf-8 15.6799ms
+2023-09-04 00:30:32.706 +02:00 [ERR] Failed executing DbCommand (10ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:30:32.707 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:30:32.707 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:30:32.712 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.714 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.716 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 8.7885ms
+2023-09-04 00:30:32.716 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 9.1662ms
+2023-09-04 00:30:32.719 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:30:32.725 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:30:32.727 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.731 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:32.733 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:30:32.734 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:30:32.735 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:30:32.738 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:30:32.785 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:30:32.815 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:30:32.816 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 74.3036ms
+2023-09-04 00:30:32.817 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.8332ms
+2023-09-04 00:30:32.818 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:30:32.819 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:30:32.819 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 100.8000ms
+2023-09-04 00:30:32.820 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 95.5885ms
+2023-09-04 00:30:33.877 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:30:33.881 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:33.882 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:30:33.883 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:30:33.884 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:30:33.885 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.0002ms
+2023-09-04 00:30:33.886 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:30:33.887 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 9.5360ms
+2023-09-04 00:30:51.097 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/students/Pozytywny/PV-3-22 - -
+2023-09-04 00:30:51.100 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:51.101 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/students/Pozytywny/PV-3-22 - - - 204 - - 4.0665ms
+2023-09-04 00:30:51.105 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students/Pozytywny/PV-3-22 - -
+2023-09-04 00:30:51.106 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:30:51.106 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API)'
+2023-09-04 00:30:51.107 +02:00 [INF] Route matched with {action = "GetStudentsWhoPassedTheExam", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetStudentsWhoPassedTheExam(System.String, System.String) on controller PuntoVitaExams.API.Controllers.StudentsController (PuntoVitaExams.API).
+2023-09-04 00:30:51.174 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__examResult_0='?' (Size = 4000), @__examNumber_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[City], [s].[FirstName], [s].[FlatNumber], [s].[LastName], [s].[Pesel], [s].[PostalCode], [s].[Result], [s].[SailingExamNumber], [s].[Street], [s].[StreetNumber]
+FROM [StudentsWhoPassedTheExam] AS [s]
+WHERE [s].[Result] = @__examResult_0 AND [s].[SailingExamNumber] = @__examNumber_1
+2023-09-04 00:30:51.178 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PuntoVitaExams.API.Models.StudentsWhoPassedTheExamDto, PuntoVitaExams.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-04 00:30:51.179 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API) in 71.1943ms
+2023-09-04 00:30:51.180 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam (PuntoVitaExams.API)'
+2023-09-04 00:30:51.181 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students/Pozytywny/PV-3-22 - - - 200 2320 application/json;+charset=utf-8 76.1901ms
+2023-09-04 00:31:14.320 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:31:14.323 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:31:14.325 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - - - 204 - - 4.5245ms
+2023-09-04 00:31:14.328 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:31:14.329 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:31:14.329 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:31:14.330 +02:00 [INF] Route matched with {action = "GetExamWithStudentsAndCommittee", controller = "SailingExams"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExamWithStudentsAndCommittee(System.String) on controller PuntoVitaExams.API.Controllers.SailingExamsController (PuntoVitaExams.API).
+2023-09-04 00:31:14.333 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SailingExams] AS [s]
+        WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:31:14.348 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[SailingExamId], [t].[ExaminationCommitteeId], [t].[SailingExamDate], [t].[SailingExamNumber], [t].[SailingExamPlace], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t0].[AddressId], [t0].[FirstName], [t0].[LastName], [t0].[Pesel], [t0].[Result], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId], [t1].[ExaminationCommitteeMemberId], [t1].[ExaminationCommitteeMemberFirstName], [t1].[ExaminationCommitteeMemberLastName]
+FROM (
+    SELECT TOP(1) [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace], [e].[ExaminationCommitteeId] AS [ExaminationCommitteeId0], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [SailingExams] AS [s]
+    LEFT JOIN [ExaminationCommittees] AS [e] ON [s].[ExaminationCommitteeId] = [e].[ExaminationCommitteeId]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[StudentId], [s1].[AddressId], [s1].[FirstName], [s1].[LastName], [s1].[Pesel], [s1].[Result]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [Students] AS [s1] ON [s0].[StudentsStudentId] = [s1].[StudentId]
+) AS [t0] ON [t].[SailingExamId] = [t0].[SailingExamsSailingExamId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t1] ON [t].[ExaminationCommitteeId0] = [t1].[ExaminationCommitteesExaminationCommitteeId]
+ORDER BY [t].[SailingExamId], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId]
+2023-09-04 00:31:14.353 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.SailingExamDto'.
+2023-09-04 00:31:14.354 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API) in 22.8325ms
+2023-09-04 00:31:14.356 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:31:14.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - - - 200 2266 application/json;+charset=utf-8 28.7639ms
+2023-09-04 00:31:23.986 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/ - -
+2023-09-04 00:31:23.989 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:31:23.990 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/ - - - 204 - - 3.5126ms
+2023-09-04 00:31:23.992 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/ - -
+2023-09-04 00:31:23.993 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:31:23.994 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:31:23.995 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:31:23.996 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/ - - - 405 0 - 4.1550ms
+2023-09-04 00:31:26.521 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/ - -
+2023-09-04 00:31:26.525 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:31:26.528 +02:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:31:26.530 +02:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2023-09-04 00:31:26.531 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/ - - - 405 0 - 9.9504ms
+2023-09-04 00:32:32.980 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:32:32.989 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:32.989 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 8.9802ms
+2023-09-04 00:32:32.990 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:32:32.991 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:32.992 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:32:32.992 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:32:32.997 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:32:33.000 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:32:33.002 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 8.8199ms
+2023-09-04 00:32:33.003 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:32:33.004 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:32:33.007 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 879 application/json;+charset=utf-8 16.2848ms
+2023-09-04 00:32:33.036 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:32:33.036 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:32:33.038 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:33.039 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:33.041 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 4.9070ms
+2023-09-04 00:32:33.043 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 6.7432ms
+2023-09-04 00:32:33.043 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:32:33.044 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:32:33.045 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:33.046 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:33.048 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:32:33.048 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:32:33.049 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:32:33.050 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:32:33.054 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:32:33.056 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:32:33.059 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 4.9451ms
+2023-09-04 00:32:33.060 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 3.9556ms
+2023-09-04 00:32:33.066 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:32:33.067 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:32:33.068 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 24.4938ms
+2023-09-04 00:32:33.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 25.4387ms
+2023-09-04 00:32:34.356 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:32:34.358 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:34.359 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:32:34.360 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:32:34.361 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:32:34.362 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.0841ms
+2023-09-04 00:32:34.363 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:32:34.364 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 8.8272ms
+2023-09-04 00:32:52.199 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:32:52.201 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:52.202 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - - - 204 - - 2.5211ms
+2023-09-04 00:32:52.206 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:32:52.206 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:32:52.207 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:32:52.208 +02:00 [INF] Route matched with {action = "GetExamWithStudentsAndCommittee", controller = "SailingExams"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExamWithStudentsAndCommittee(System.String) on controller PuntoVitaExams.API.Controllers.SailingExamsController (PuntoVitaExams.API).
+2023-09-04 00:32:52.211 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SailingExams] AS [s]
+        WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:32:52.214 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[SailingExamId], [t].[ExaminationCommitteeId], [t].[SailingExamDate], [t].[SailingExamNumber], [t].[SailingExamPlace], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t0].[AddressId], [t0].[FirstName], [t0].[LastName], [t0].[Pesel], [t0].[Result], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId], [t1].[ExaminationCommitteeMemberId], [t1].[ExaminationCommitteeMemberFirstName], [t1].[ExaminationCommitteeMemberLastName]
+FROM (
+    SELECT TOP(1) [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace], [e].[ExaminationCommitteeId] AS [ExaminationCommitteeId0], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [SailingExams] AS [s]
+    LEFT JOIN [ExaminationCommittees] AS [e] ON [s].[ExaminationCommitteeId] = [e].[ExaminationCommitteeId]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[StudentId], [s1].[AddressId], [s1].[FirstName], [s1].[LastName], [s1].[Pesel], [s1].[Result]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [Students] AS [s1] ON [s0].[StudentsStudentId] = [s1].[StudentId]
+) AS [t0] ON [t].[SailingExamId] = [t0].[SailingExamsSailingExamId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t1] ON [t].[ExaminationCommitteeId0] = [t1].[ExaminationCommitteesExaminationCommitteeId]
+ORDER BY [t].[SailingExamId], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId]
+2023-09-04 00:32:52.218 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.SailingExamDto'.
+2023-09-04 00:32:52.219 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API) in 9.5589ms
+2023-09-04 00:32:52.220 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:32:52.221 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - - - 200 2266 application/json;+charset=utf-8 15.3292ms
+2023-09-04 00:33:41.355 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:33:41.365 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.365 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 9.9120ms
+2023-09-04 00:33:41.367 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:33:41.367 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.368 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:33:41.368 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:33:41.371 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:33:41.375 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:33:41.375 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:33:41.376 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 6.6116ms
+2023-09-04 00:33:41.383 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:33:41.384 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 879 application/json;+charset=utf-8 17.0542ms
+2023-09-04 00:33:41.395 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:33:41.412 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:33:41.412 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.413 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.415 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 19.3904ms
+2023-09-04 00:33:41.416 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 3.9874ms
+2023-09-04 00:33:41.424 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:33:41.425 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:33:41.430 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.431 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:41.433 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:33:41.434 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:33:41.435 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:33:41.438 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:33:41.440 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:33:41.442 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:33:41.442 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 2.8638ms
+2023-09-04 00:33:41.444 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 2.5526ms
+2023-09-04 00:33:41.446 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:33:41.448 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:33:41.448 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 25.0512ms
+2023-09-04 00:33:41.449 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 24.5959ms
+2023-09-04 00:33:42.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:33:42.598 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:42.599 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:33:42.600 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:33:42.602 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:33:42.603 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.0692ms
+2023-09-04 00:33:42.604 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:33:42.604 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 8.9598ms
+2023-09-04 00:33:53.116 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:33:53.119 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:53.120 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - - - 204 - - 3.9471ms
+2023-09-04 00:33:53.121 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:33:53.122 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:33:53.122 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:33:53.123 +02:00 [INF] Route matched with {action = "GetExamWithStudentsAndCommittee", controller = "SailingExams"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExamWithStudentsAndCommittee(System.String) on controller PuntoVitaExams.API.Controllers.SailingExamsController (PuntoVitaExams.API).
+2023-09-04 00:33:53.125 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SailingExams] AS [s]
+        WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:33:53.128 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[SailingExamId], [t].[ExaminationCommitteeId], [t].[SailingExamDate], [t].[SailingExamNumber], [t].[SailingExamPlace], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t0].[AddressId], [t0].[FirstName], [t0].[LastName], [t0].[Pesel], [t0].[Result], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId], [t1].[ExaminationCommitteeMemberId], [t1].[ExaminationCommitteeMemberFirstName], [t1].[ExaminationCommitteeMemberLastName]
+FROM (
+    SELECT TOP(1) [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace], [e].[ExaminationCommitteeId] AS [ExaminationCommitteeId0], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [SailingExams] AS [s]
+    LEFT JOIN [ExaminationCommittees] AS [e] ON [s].[ExaminationCommitteeId] = [e].[ExaminationCommitteeId]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[StudentId], [s1].[AddressId], [s1].[FirstName], [s1].[LastName], [s1].[Pesel], [s1].[Result]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [Students] AS [s1] ON [s0].[StudentsStudentId] = [s1].[StudentId]
+) AS [t0] ON [t].[SailingExamId] = [t0].[SailingExamsSailingExamId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t1] ON [t].[ExaminationCommitteeId0] = [t1].[ExaminationCommitteesExaminationCommitteeId]
+ORDER BY [t].[SailingExamId], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId]
+2023-09-04 00:33:53.133 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.SailingExamDto'.
+2023-09-04 00:33:53.134 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API) in 10.4831ms
+2023-09-04 00:33:53.135 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:33:53.136 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - - - 200 2266 application/json;+charset=utf-8 15.1437ms
+2023-09-04 00:36:19.540 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:36:19.549 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.549 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 9.5955ms
+2023-09-04 00:36:19.551 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:36:19.551 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.552 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:36:19.552 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:36:19.556 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:36:19.559 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:36:19.559 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 6.0214ms
+2023-09-04 00:36:19.560 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:36:19.561 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 879 application/json;+charset=utf-8 10.6468ms
+2023-09-04 00:36:19.565 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:36:19.621 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:36:19.621 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:36:19.623 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.624 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.624 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 3.7626ms
+2023-09-04 00:36:19.625 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 4.8539ms
+2023-09-04 00:36:19.626 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:36:19.627 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:36:19.628 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.629 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:19.630 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:36:19.630 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:36:19.631 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:36:19.632 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:36:19.634 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:36:19.635 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:36:19.635 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 1.9573ms
+2023-09-04 00:36:19.636 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 1.6319ms
+2023-09-04 00:36:19.637 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:36:19.638 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:36:19.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 12.3938ms
+2023-09-04 00:36:19.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 12.3338ms
+2023-09-04 00:36:21.096 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:36:21.099 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:21.100 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:36:21.100 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:36:21.102 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:36:21.103 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 0.9434ms
+2023-09-04 00:36:21.104 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:36:21.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 9.1296ms
+2023-09-04 00:36:37.949 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:36:37.950 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:37.950 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/sailingExams/PV-3-22 - - - 204 - - 1.5567ms
+2023-09-04 00:36:37.952 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - -
+2023-09-04 00:36:37.952 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:36:37.953 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:36:37.955 +02:00 [INF] Route matched with {action = "GetExamWithStudentsAndCommittee", controller = "SailingExams"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetExamWithStudentsAndCommittee(System.String) on controller PuntoVitaExams.API.Controllers.SailingExamsController (PuntoVitaExams.API).
+2023-09-04 00:36:38.018 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SailingExams] AS [s]
+        WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:36:38.034 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__sailingExamNumber_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[SailingExamId], [t].[ExaminationCommitteeId], [t].[SailingExamDate], [t].[SailingExamNumber], [t].[SailingExamPlace], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t0].[AddressId], [t0].[FirstName], [t0].[LastName], [t0].[Pesel], [t0].[Result], [t].[ExaminationCommitteeHeadId], [t].[ExaminationCommitteeSecretaryId], [t].[ExaminationCommitteeHeadFirstName], [t].[ExaminationCommitteeHeadLastName], [t].[ExaminationCommitteeSecretaryFirstName], [t].[ExaminationCommitteeSecretaryLastName], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId], [t1].[ExaminationCommitteeMemberId], [t1].[ExaminationCommitteeMemberFirstName], [t1].[ExaminationCommitteeMemberLastName]
+FROM (
+    SELECT TOP(1) [s].[SailingExamId], [s].[ExaminationCommitteeId], [s].[SailingExamDate], [s].[SailingExamNumber], [s].[SailingExamPlace], [e].[ExaminationCommitteeId] AS [ExaminationCommitteeId0], [e].[ExaminationCommitteeHeadId], [e].[ExaminationCommitteeSecretaryId], [e0].[ExaminationCommitteeHeadId] AS [ExaminationCommitteeHeadId0], [e0].[ExaminationCommitteeHeadFirstName], [e0].[ExaminationCommitteeHeadLastName], [e1].[ExaminationCommitteeSecretaryId] AS [ExaminationCommitteeSecretaryId0], [e1].[ExaminationCommitteeSecretaryFirstName], [e1].[ExaminationCommitteeSecretaryLastName]
+    FROM [SailingExams] AS [s]
+    LEFT JOIN [ExaminationCommittees] AS [e] ON [s].[ExaminationCommitteeId] = [e].[ExaminationCommitteeId]
+    LEFT JOIN [ExaminationCommitteeHeads] AS [e0] ON [e].[ExaminationCommitteeHeadId] = [e0].[ExaminationCommitteeHeadId]
+    LEFT JOIN [ExaminationCommitteeSecretaries] AS [e1] ON [e].[ExaminationCommitteeSecretaryId] = [e1].[ExaminationCommitteeSecretaryId]
+    WHERE [s].[SailingExamNumber] = @__sailingExamNumber_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[StudentId], [s1].[AddressId], [s1].[FirstName], [s1].[LastName], [s1].[Pesel], [s1].[Result]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [Students] AS [s1] ON [s0].[StudentsStudentId] = [s1].[StudentId]
+) AS [t0] ON [t].[SailingExamId] = [t0].[SailingExamsSailingExamId]
+LEFT JOIN (
+    SELECT [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [e2].[ExaminationCommitteesExaminationCommitteeId], [e3].[ExaminationCommitteeMemberId], [e3].[ExaminationCommitteeMemberFirstName], [e3].[ExaminationCommitteeMemberLastName]
+    FROM [ExaminationCommitteeExaminationCommitteeMember] AS [e2]
+    INNER JOIN [ExaminationCommitteeMembers] AS [e3] ON [e2].[ExaminationCommitteeMembersExaminationCommitteeMemberId] = [e3].[ExaminationCommitteeMemberId]
+) AS [t1] ON [t].[ExaminationCommitteeId0] = [t1].[ExaminationCommitteesExaminationCommitteeId]
+ORDER BY [t].[SailingExamId], [t].[ExaminationCommitteeId0], [t].[ExaminationCommitteeHeadId0], [t].[ExaminationCommitteeSecretaryId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[StudentId], [t1].[ExaminationCommitteeMembersExaminationCommitteeMemberId], [t1].[ExaminationCommitteesExaminationCommitteeId]
+2023-09-04 00:36:38.040 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.SailingExamDto'.
+2023-09-04 00:36:38.041 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API) in 84.9028ms
+2023-09-04 00:36:38.042 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee (PuntoVitaExams.API)'
+2023-09-04 00:36:38.043 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/sailingExams/PV-3-22 - - - 200 2266 application/json;+charset=utf-8 91.7072ms
+2023-09-04 00:37:55.515 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/students/721634791 - -
+2023-09-04 00:37:55.521 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:37:55.522 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/students/721634791 - - - 204 - - 6.9348ms
+2023-09-04 00:37:55.523 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students/721634791 - -
+2023-09-04 00:37:55.524 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:37:55.525 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API)'
+2023-09-04 00:37:55.529 +02:00 [INF] Route matched with {action = "GetStudentWithAddrressAndExams", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStudentWithAddrressAndExams(System.String) on controller PuntoVitaExams.API.Controllers.StudentsController (PuntoVitaExams.API).
+2023-09-04 00:37:55.543 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__pesel_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Students] AS [s]
+        WHERE [s].[Pesel] = @__pesel_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:37:55.574 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__pesel_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[StudentId], [t].[AddressId], [t].[FirstName], [t].[LastName], [t].[Pesel], [t].[Result], [t].[AddressId0], [t].[City], [t].[FlatNumber], [t].[PostalCode], [t].[Street], [t].[StreetNumber], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[SailingExamId], [t0].[ExaminationCommitteeId], [t0].[SailingExamDate], [t0].[SailingExamNumber], [t0].[SailingExamPlace]
+FROM (
+    SELECT TOP(1) [s].[StudentId], [s].[AddressId], [s].[FirstName], [s].[LastName], [s].[Pesel], [s].[Result], [a].[AddressId] AS [AddressId0], [a].[City], [a].[FlatNumber], [a].[PostalCode], [a].[Street], [a].[StreetNumber]
+    FROM [Students] AS [s]
+    LEFT JOIN [Addressess] AS [a] ON [s].[AddressId] = [a].[AddressId]
+    WHERE [s].[Pesel] = @__pesel_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[SailingExamId], [s1].[ExaminationCommitteeId], [s1].[SailingExamDate], [s1].[SailingExamNumber], [s1].[SailingExamPlace]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [SailingExams] AS [s1] ON [s0].[SailingExamsSailingExamId] = [s1].[SailingExamId]
+) AS [t0] ON [t].[StudentId] = [t0].[StudentsStudentId]
+ORDER BY [t].[StudentId], [t].[AddressId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId]
+2023-09-04 00:37:55.589 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.StudentDto'.
+2023-09-04 00:37:55.592 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API) in 62.2463ms
+2023-09-04 00:37:55.594 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API)'
+2023-09-04 00:37:55.595 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students/721634791 - - - 200 365 application/json;+charset=utf-8 71.5625ms
+2023-09-04 00:38:38.702 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/login - -
+2023-09-04 00:38:38.708 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.709 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/login - - - 204 - - 6.5395ms
+2023-09-04 00:38:38.710 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/login application/json 54
+2023-09-04 00:38:38.711 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.711 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:38:38.712 +02:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Login(PuntoVitaExams.API.Models.LoginDto) on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:38:38.725 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__dto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[PasswordHash], [u].[PasswordSalt], [u].[RefreshToken], [u].[RoleId], [u].[TokenCreated], [u].[TokenExpires], [r].[Id], [r].[Name]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[Id]
+WHERE [u].[Email] = @__dto_Email_0
+2023-09-04 00:38:38.728 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.LoginResponseDto'.
+2023-09-04 00:38:38.729 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API) in 16.4657ms
+2023-09-04 00:38:38.730 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [RefreshToken] = @p0, [TokenCreated] = @p1, [TokenExpires] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-09-04 00:38:38.730 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.Login (PuntoVitaExams.API)'
+2023-09-04 00:38:38.733 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/login application/json 54 - 200 879 application/json;+charset=utf-8 22.7008ms
+2023-09-04 00:38:38.743 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logged - -
+2023-09-04 00:38:38.759 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:38:38.759 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.760 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.761 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logged - - - 204 - - 18.4847ms
+2023-09-04 00:38:38.763 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/loggedRole - - - 204 - - 4.2767ms
+2023-09-04 00:38:38.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:38:38.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/logged - -
+2023-09-04 00:38:38.773 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.774 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:38.776 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:38:38.777 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:38:38.779 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:38:38.780 +02:00 [INF] Route matched with {action = "GetMe", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetMe() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:38:38.784 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:38:38.788 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:38:38.789 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 5.6688ms
+2023-09-04 00:38:38.791 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API) in 3.2735ms
+2023-09-04 00:38:38.792 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:38:38.793 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetMe (PuntoVitaExams.API)'
+2023-09-04 00:38:38.794 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 22.7737ms
+2023-09-04 00:38:38.795 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/logged - - - 200 - text/plain;+charset=utf-8 23.6802ms
+2023-09-04 00:38:39.903 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/account/loggedRole - -
+2023-09-04 00:38:39.906 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:39.908 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:38:39.909 +02:00 [INF] Route matched with {action = "GetRole", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult GetRole() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:38:39.910 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-09-04 00:38:39.911 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API) in 0.8811ms
+2023-09-04 00:38:39.911 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.GetRole (PuntoVitaExams.API)'
+2023-09-04 00:38:39.912 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/account/loggedRole - - - 200 - text/plain;+charset=utf-8 9.1281ms
+2023-09-04 00:38:45.632 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/students/721634791 - -
+2023-09-04 00:38:45.634 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:45.635 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/students/721634791 - - - 204 - - 3.4405ms
+2023-09-04 00:38:45.637 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7169/api/students/721634791 - -
+2023-09-04 00:38:45.637 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:45.638 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API)'
+2023-09-04 00:38:45.638 +02:00 [INF] Route matched with {action = "GetStudentWithAddrressAndExams", controller = "Students"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetStudentWithAddrressAndExams(System.String) on controller PuntoVitaExams.API.Controllers.StudentsController (PuntoVitaExams.API).
+2023-09-04 00:38:45.643 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__pesel_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Students] AS [s]
+        WHERE [s].[Pesel] = @__pesel_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-09-04 00:38:45.647 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__pesel_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[StudentId], [t].[AddressId], [t].[FirstName], [t].[LastName], [t].[Pesel], [t].[Result], [t].[AddressId0], [t].[City], [t].[FlatNumber], [t].[PostalCode], [t].[Street], [t].[StreetNumber], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId], [t0].[SailingExamId], [t0].[ExaminationCommitteeId], [t0].[SailingExamDate], [t0].[SailingExamNumber], [t0].[SailingExamPlace]
+FROM (
+    SELECT TOP(1) [s].[StudentId], [s].[AddressId], [s].[FirstName], [s].[LastName], [s].[Pesel], [s].[Result], [a].[AddressId] AS [AddressId0], [a].[City], [a].[FlatNumber], [a].[PostalCode], [a].[Street], [a].[StreetNumber]
+    FROM [Students] AS [s]
+    LEFT JOIN [Addressess] AS [a] ON [s].[AddressId] = [a].[AddressId]
+    WHERE [s].[Pesel] = @__pesel_0
+) AS [t]
+LEFT JOIN (
+    SELECT [s0].[SailingExamsSailingExamId], [s0].[StudentsStudentId], [s1].[SailingExamId], [s1].[ExaminationCommitteeId], [s1].[SailingExamDate], [s1].[SailingExamNumber], [s1].[SailingExamPlace]
+    FROM [SailingExamStudent] AS [s0]
+    INNER JOIN [SailingExams] AS [s1] ON [s0].[SailingExamsSailingExamId] = [s1].[SailingExamId]
+) AS [t0] ON [t].[StudentId] = [t0].[StudentsStudentId]
+ORDER BY [t].[StudentId], [t].[AddressId0], [t0].[SailingExamsSailingExamId], [t0].[StudentsStudentId]
+2023-09-04 00:38:45.650 +02:00 [INF] Executing OkObjectResult, writing value of type 'PuntoVitaExams.API.Models.StudentDto'.
+2023-09-04 00:38:45.651 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API) in 9.6497ms
+2023-09-04 00:38:45.652 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams (PuntoVitaExams.API)'
+2023-09-04 00:38:45.654 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7169/api/students/721634791 - - - 200 365 application/json;+charset=utf-8 16.7775ms
+2023-09-04 00:38:53.284 +02:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7169/api/account/logout - -
+2023-09-04 00:38:53.285 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:53.286 +02:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7169/api/account/logout - - - 204 - - 2.2099ms
+2023-09-04 00:38:53.287 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7169/api/account/logout application/json 2
+2023-09-04 00:38:53.287 +02:00 [INF] CORS policy execution successful.
+2023-09-04 00:38:53.288 +02:00 [INF] Executing endpoint 'PuntoVitaExams.API.Controllers.AccountController.LogOut (PuntoVitaExams.API)'
+2023-09-04 00:38:53.291 +02:00 [INF] Route matched with {action = "LogOut", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogOut() on controller PuntoVitaExams.API.Controllers.AccountController (PuntoVitaExams.API).
+2023-09-04 00:38:53.298 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2023-09-04 00:38:53.299 +02:00 [INF] Executed action PuntoVitaExams.API.Controllers.AccountController.LogOut (PuntoVitaExams.API) in 6.7153ms
+2023-09-04 00:38:53.299 +02:00 [INF] Executed endpoint 'PuntoVitaExams.API.Controllers.AccountController.LogOut (PuntoVitaExams.API)'
+2023-09-04 00:38:53.300 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7169/api/account/logout application/json 2 - 204 - - 13.1140ms

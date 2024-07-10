@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PuntoVitaExams.API</name>
+    </assembly>
+    <members>
+        <member name="M:PuntoVitaExams.API.Controllers.AccountController.GetManagers">
+            <summary>
+            Gets all managers.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.AccountController.DeleteAllUsers">
+            <summary>
+            Deletes all users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.AccountController.DeleteUserByEmail(System.String)">
+            <summary>
+            Deletes a specific user, manager or admin.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.CreateNewExaminationCommitteeHead(PuntoVitaExams.API.Models.ExaminationCommitteeHeadDto)">
+            <summary>
+            Creates a new committee head.
+            </summary>
+            <param name="newHeadDto"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetExaminationCommitteeHeads">
+            <summary>
+            Gets all committee heads.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetExaminationCommitteeHead(System.String)">
+            <summary>
+            Gets a specific committee head.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.ConnectCommitteeHeadAndCommittee(System.Int32,System.String)">
+            <summary>
+            Assigns the head to the committee.
+            </summary>
+            <param name="lastName"> </param>
+            <param name="examinationCommitteeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.GetCommitteeHeadWithExams(System.String)">
+            <summary>
+            Displays a specific committee head with exams.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeHeadsController.DeleteExaminationCommitteeHead(System.String)">
+            <summary>
+            Deletes a specific committee head.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.CreateNewExaminationCommitteeMember(PuntoVitaExams.API.Models.ExaminationCommitteeMemberDto)">
+            <summary>
+            Creates a new committee member.
+            </summary>
+            <param name="newHeadDto"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetExaminationCommitteeMembers">
+            <summary>
+            Gets all committee members.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetExaminationCommitteeMember(System.String)">
+            <summary>
+            Gets a specific committee member.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.ConnectCommitteeMemberAndCommittee(System.Int32,System.String)">
+            <summary>
+            Assigns the member to the committee.
+            </summary>
+            <param name="lastName"> </param>
+            /// <param name="examinationCommitteeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.GetCommitteeMemberWithExams(System.String)">
+            <summary>
+            Displays a specific committee member with exams.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeMembersController.DeleteExaminationCommitteeMember(System.String)">
+            <summary>
+            Deletes a specific committee member.
+            </summary>
+            <param name="lastName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PuntoVitaExams.API.Controllers.ExaminationCommitteesController">
+            <summary>
+            Contains methods managing examination committees
+            </summary>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteesController.CreateNewExaminationCommittee(PuntoVitaExams.API.Models.ExaminationCommitteeForCreationDto)">
+            <summary>
+            Creates a new examination committee.
+            </summary>
+            <param name="newCommitteeDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittees">
+            <summary>
+            Gets all examination committees
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteesController.GetExaminationCommittee(System.Int32)">
+            <summary>
+            Gets a specific examinaiton committee.
+            </summary>
+            <param name="examinationCommitteeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteesController.DeleteExaminationCommittee(System.Int32)">
+            <summary>
+            Deletes a specific examination committee.
+            </summary>
+            <param name="examinationCommitteeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.CreateNewExaminationCommitteeSecretary(PuntoVitaExams.API.Models.ExaminationCommitteeSecretaryDto)">
+            <summary>
+            Creates a new committee secretary.
+            </summary>
+            <param name="newSecretaryDto"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetExaminationCommitteeSecretaries">
+            <summary>
+            Gets all committee secretaries.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetExaminationCommitteeSecretary(System.String)">
+            <summary>
+            Gets a specific committee secretary.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.ConnectCommiteSecretaryAndCommittee(System.Int32,System.String)">
+            <summary>
+            Assigns the secretary to the committee.
+            </summary>
+            <param name="lastName"> </param>
+            /// <param name="examinationCommitteeId"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.GetCommitteeSecretaryWithExams(System.String)">
+            <summary>
+            Displays a specific committee secretary with exams.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.ExaminationCommitteeSecretariesController.DeleteExaminationCommitteeSecretary(System.String)">
+            <summary>
+            Deletes a specific committee secretary.
+            </summary>
+            <param name="lastName"> </param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.SailingExamsController.CreateNewSailingExam(PuntoVitaExams.API.Models.SailingExamForCreationDto)">
+            <summary>
+            Creates a new exam.
+            </summary>
+            <param name="newExamDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.SailingExamsController.GetExamWithStudentsAndCommittee(System.String)">
+            <summary>
+            Gets a specific exam with students.
+            </summary>
+            <param name="sailingExamNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.SailingExamsController.ConnectExamWithCommittee(System.Int32,System.String)">
+            <summary>
+            Assigns the committee to the exam.
+            </summary>
+            <param name="sailingExamNumber"></param>
+            <param name="examinationCommitteeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.SailingExamsController.DeleteSailingExam(System.String)">
+            <summary>
+            Deletes a specific exam.
+            </summary>
+            <param name="sailingExamNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.CreateStudentWithAddressTogether(PuntoVitaExams.API.Models.StudentForCreationDto)">
+            <summary>
+            Creates new student.
+            </summary>
+            <param name="newStudentDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.GetStudentWithAddrressAndExams(System.String)">
+            <summary>
+            Gets a specific student with his exams.
+            </summary>
+            <param name="pesel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.GetStudentsWhoPassedTheExam(System.String,System.String)">
+            <summary>
+            Gets students and their addressess by the exam result
+            </summary>
+            <param name="examResult"></param>
+            <param name="examNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.AddStudentToExam(System.String,System.String)">
+            <summary>
+            Adds a specific student to the exam.
+            </summary>
+            <param name="pesel"></param>
+            <param name="sailingExamNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.UpdateExamResult(System.String,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{PuntoVitaExams.API.Models.StudentForAddingExamResultDto})">
+            <summary>
+            Updates exam result.
+            </summary>
+            <param name="pesel"></param>
+            <param name="patchDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PuntoVitaExams.API.Controllers.StudentsController.DeleteStudent(System.String)">
+            <summary>
+            Deletes a specific student.
+            </summary>
+            <param name="pesel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.Initial">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.RemoveExaminationCommitteeIdFromSailingExam">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.RemoveExaminationCommitteeIdFromSailingExam.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.RemoveExaminationCommitteeIdFromSailingExam.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.RemoveExaminationCommitteeIdFromSailingExam.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.AddUserAndRole">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddUserAndRole.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddUserAndRole.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddUserAndRole.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.AddViews">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddViews.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddViews.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddViews.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.AddPasswordSalt">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddPasswordSalt.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddPasswordSalt.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddPasswordSalt.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.changeTypeOfPasswordsProperty">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.changeTypeOfPasswordsProperty.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.changeTypeOfPasswordsProperty.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.changeTypeOfPasswordsProperty.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.AddRefreshToken">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddRefreshToken.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddRefreshToken.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddRefreshToken.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.DeleteRefreshTokenTable">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.DeleteRefreshTokenTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.DeleteRefreshTokenTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.DeleteRefreshTokenTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Migrations.AddNamePropertyToUserEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddNamePropertyToUserEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddNamePropertyToUserEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PuntoVitaExams.API.Migrations.AddNamePropertyToUserEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PuntoVitaExams.API.Properties.Resources">
+            <summary>
+              Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:PuntoVitaExams.API.Properties.Resources.ResourceManager">
+            <summary>
+            Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:PuntoVitaExams.API.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
+            </summary>
+        </member>
+    </members>
+</doc>
